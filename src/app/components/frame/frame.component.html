@@ -1,0 +1,29 @@
+<mat-sidenav-container>
+<mat-sidenav mode="side" opened #sidenavToggle>
+    <app-sidenav></app-sidenav>
+</mat-sidenav>
+<mat-sidenav-content>
+    <mat-toolbar>
+        <!-- <app-widgets [widget]="widgets"></app-widgets> -->
+        <div class="d-flex align-items-center">
+            <button (click)="sidenavToggle.toggle()" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+                <mat-icon>menu</mat-icon>
+            </button>
+            <span>
+                <app-common [logoName]="logoTitle"></app-common>
+            </span>
+        </div>
+        <div>
+            <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+                <mat-icon>favorite</mat-icon>
+            </button>
+            <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+                <mat-icon>share</mat-icon>
+            </button>
+        </div>
+    </mat-toolbar>
+    <div class="main">
+        <router-outlet></router-outlet>
+    </div>  
+</mat-sidenav-content>
+</mat-sidenav-container>
